@@ -498,3 +498,21 @@ h1, h2, h3 {
   html { scroll-behavior: auto; }
   .fade-in { opacity: 1; transform: none; }
 }
+
+/* ---------- Footer credit & copyright ---------- */
+.footer-credit {
+  color: var(--gold);
+  font-weight: 500;
+  border-bottom: 1px solid rgba(230, 184, 77, 0.35);
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.footer-credit:hover {
+  color: #F0C661;
+  border-bottom-color: var(--gold);
+}
+.footer-copy {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
