@@ -1,40 +1,62 @@
-// Set current year in footer
-document.addEventListener('DOMContentLoaded', function () {
-  const yearEl = document.getElementById('year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
+document.addEventListener('DOMContentLoaded', () => {
 
-  // Smooth scroll for nav links
-  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#' || targetId.length < 2) return;
-      const target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        const headerOffset = 70;
-        const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-        window.scrollTo({ top: top, behavior: 'smooth' });
-      }
+    // ===== CURRENT YEAR =====
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // ===== HEADER SCROLL EFFECT =====
+    const header = document.getElementById('header');
+    if (header) {
+        const onScroll = () => {
+            if (window.scrollY > 30) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    }
+
+    // ===== MOBILE MENU =====
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+    if (burger && nav) {
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                burger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+    }
+
+    // ===== SMOOTH SCROLL =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.length < 2) return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
     });
-  });
 
-  // Fade-in on scroll
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+    // ===== SCROLL REVEAL =====
+    const revealTargets = document.querySelectorAll('.music-card, .about-image, .about-text, .contact-row');
+    if (revealTargets.length && 'IntersectionObserver' in window) {
+        revealTargets.forEach(el => el.classList.add('reveal-init'));
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealTargets.forEach(el => obs.observe(el));
+    }
 
-  document.querySelectorAll('.about, .music, .gulbahar, .contact').forEach(function (el) {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-    observer.observe(el);
-  });
 });
