@@ -68,6 +68,7 @@
           '<div class="song-thumb">' + thumbHtml + playHtml + '</div>' +
           '<div class="song-info">' +
             '<h3 class="song-title">' + song.title + '</h3>' +
+            (song.subtitle ? '<span class="song-subtitle">' + song.subtitle + '</span>' : '') +
           '</div>';
 
         if (hasYt) {

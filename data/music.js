@@ -4,8 +4,9 @@
    নতুন song release হলে নিচের format-এ যোগ করুন।
 
      title     : Song-এর নাম
+     subtitle  : ছোট caption (optional)
      thumbnail : Image-এর direct link
-     youtube   : YouTube video-এর full URL
+     youtube   : YouTube video-এর full URL (না থাকলে channel URL)
    ===================================================================== */
 
 window.MUSIC_DATA = {
@@ -21,9 +22,10 @@ window.MUSIC_DATA = {
     name: "Covers",
     songs: [
       {
-        title: "Chal Dil Mere",
-        thumbnail: "https://i.ibb.co.com/bR6k79FR/MCUz-C-4e-W8-A-HD.jpg",
-        youtube: "https://youtu.be/MCUzC-4eW8A"
+        title: "Chalo Door Kahin",
+        subtitle: "Cover · Original by Samar Jafri",
+        thumbnail: "https://i.ibb.co.com/fzbbF0Vg/20261016-164818.png",
+        youtube: "https://youtube.com/@AbdullahAlMustafa_Official"
       }
     ]
   }

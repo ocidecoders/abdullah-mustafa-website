@@ -1376,3 +1376,24 @@ h1, h2, h3 {
     letter-spacing: 0.2em;
   }
 }
+
+/* =====================================================================
+   Song subtitle
+   ===================================================================== */
+
+.song-subtitle {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-top: 2px;
+  display: block;
+}
+@media (max-width: 520px) {
+  .song-subtitle {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+  }
+}
