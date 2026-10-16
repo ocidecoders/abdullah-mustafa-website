@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writings — Abdullah Al Mustafa</title>
+  <meta name="description" content="Writings by Abdullah Al Mustafa — lyrics, poetic lines, and reflections in Hindi and Urdu.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="canonical" href="https://abdullahalmustafa.onrender.com/writings.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Writings page specific */
+    .writings-page {
+      background: var(--off-white);
+      min-height: 100vh;
+      padding: 100px var(--pad) 60px;
+    }
+    .writings-page-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .writings-page h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.4rem, 10vw, 6rem);
+      line-height: 0.9;
+      letter-spacing: -0.045em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 40px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line-light);
+    }
+    .writings-page .back-link {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 24px;
+      transition: color 0.25s;
+    }
+    .writings-page .back-link:hover { color: var(--red); }
+
+    .writings-page .writings-feed {
+      gap: 56px;
+    }
+    .writings-page .writing-title {
+      font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    }
+
+    .writings-empty {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey);
+      text-align: center;
+      padding: 60px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">Abdullah Al Mustafa</a>
+    <div class="nav-links">
+      <a href="index.html#bio">Bio</a>
+      <a href="index.html#music">Music</a>
+      <a href="index.html#writings">Writings</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="writings-page">
+    <div class="writings-page-inner">
+      <a href="index.html" class="back-link">← Back to Home</a>
+      <h1>Writings</h1>
+
+      <div class="writings-feed" id="writings-feed">
+        <p class="writings-empty">No writings yet.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-copy">© 2026 Abdullah Al Mustafa</p>
+  </footer>
+
+  <script src="data/writings.js"></script>
+  <script>
+    (function () {
+      const data = window.WRITINGS_DATA || [];
+      const feed = document.getElementById('writings-feed');
+
+      const items = data.filter((w) => w && w.image && w.image.trim());
+      if (items.length === 0) return;
+
+      feed.innerHTML = '';
+      items.forEach((w) => {
+        const card = document.createElement('article');
+        card.className = 'writing-card';
+        const link = w.link && w.link.trim() ? w.link : '#';
+        const date = w.date ? `<span class="writing-date">${w.date}</span>` : '';
+        const title = w.title ? `<h3 class="writing-title">${w.title}</h3>` : '';
+
+        card.innerHTML =
+          `<a href="${link}" class="writing-link">
+             <div class="writing-image">
+               <img src="${w.image}" alt="${w.title || 'Writing'}" loading="lazy">
+             </div>
+             <div class="writing-info">
+               ${title}
+               ${date}
+             </div>
+           </a>`;
+        feed.appendChild(card);
+      });
+
+      // Nav scroll state
+      const nav = document.querySelector('.nav');
+      const onScroll = () => nav && nav.classList.toggle('scrolled', window.scrollY > 20);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>
