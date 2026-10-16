@@ -1305,3 +1305,52 @@ h1, h2, h3 {
   color: var(--red);
   border-bottom-color: var(--red);
 }
+
+/* =====================================================================
+   Bio Read More button
+   ===================================================================== */
+
+.bio-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  align-self: flex-start;
+  margin-top: 12px;
+  padding: 13px 26px;
+  background: transparent;
+  color: var(--black);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border: 1px solid var(--black);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+}
+.bio-read-more:hover {
+  background: var(--black);
+  color: var(--white);
+  gap: 18px;
+}
+.bio-read-more span {
+  font-size: 0.9rem;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.3s var(--ease);
+}
+.bio-read-more:hover span {
+  transform: translateX(3px);
+}
+
+/* Hide old bio-more-link style (no longer used) */
+.bio-more-link { display: none !important; }
+
+@media (max-width: 520px) {
+  .bio-read-more {
+    padding: 12px 22px;
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+  }
+}
