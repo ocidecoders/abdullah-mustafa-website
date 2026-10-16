@@ -1,17 +1,11 @@
 (function () {
   'use strict';
 
-  // Current year
-  const y = document.getElementById('year');
-  if (y) y.textContent = new Date().getFullYear();
-
-  // Nav scrolled state
   const nav = document.querySelector('.nav');
   const onScroll = () => nav && nav.classList.toggle('scrolled', window.scrollY > 20);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (e) => {
       const id = link.getAttribute('href');
@@ -24,43 +18,52 @@
     });
   });
 
-  // Contact form → mailto
   const form = document.getElementById('contact-form');
-  if (form) {
-    const TO = 'abdullahalmustafa56@gmail.com';
+  if (!form) return;
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+  const TO = 'abdullahalmustafa56@gmail.com';
 
-      const subject = document.getElementById('cf-subject').value.trim();
-      const name    = document.getElementById('cf-name').value.trim();
-      const email   = document.getElementById('cf-email').value.trim();
-      const message = document.getElementById('cf-message').value.trim();
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-      // Basic validation
-      if (!subject || !name || !email || !message) {
-        // Shake the missing fields
-        form.querySelectorAll('[required]').forEach((el) => {
-          if (!el.value.trim()) {
-            el.classList.add('field-error');
-            setTimeout(() => el.classList.remove('field-error'), 500);
-          }
-        });
-        return;
+    const subjectEl = document.getElementById('cf-subject');
+    const nameEl    = document.getElementById('cf-name');
+    const emailEl   = document.getElementById('cf-email');
+    const messageEl = document.getElementById('cf-message');
+
+    const fields = [subjectEl, nameEl, emailEl, messageEl];
+
+    // Validate
+    let missing = false;
+    fields.forEach((el) => {
+      if (!el.value.trim()) {
+        el.classList.add('field-error');
+        setTimeout(() => el.classList.remove('field-error'), 500);
+        missing = true;
       }
-
-      const mailSubject = `[${subject}] — from ${name}`;
-      const mailBody =
-        `Name: ${name}\n` +
-        `Email: ${email}\n` +
-        `Subject: ${subject}\n\n` +
-        `Message:\n${message}\n\n` +
-        `— Sent via abdullahalmustafa.onrender.com`;
-
-      const mailto = `mailto:${TO}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
-      window.location.href = mailto;
     });
-  }
+    if (missing) {
+      const firstEmpty = fields.find(el => !el.value.trim());
+      if (firstEmpty) firstEmpty.focus();
+      return;
+    }
+
+    const subject = subjectEl.value.trim();
+    const name    = nameEl.value.trim();
+    const email   = emailEl.value.trim();
+    const message = messageEl.value.trim();
+
+    const mailSubject = `[${subject}] — from ${name}`;
+    const mailBody =
+      `Name: ${name}\n` +
+      `Email: ${email}\n` +
+      `Subject: ${subject}\n\n` +
+      `Message:\n${message}\n\n` +
+      `— Sent via abdullahalmustafa.onrender.com`;
+
+    window.location.href =
+      `mailto:${TO}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+  });
 })();
 ENDOFJS
-echo "js/main.js updated"
+echo "js/main.js finalized"
