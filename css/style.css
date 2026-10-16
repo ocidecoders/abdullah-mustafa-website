@@ -1354,3 +1354,25 @@ h1, h2, h3 {
     letter-spacing: 0.18em;
   }
 }
+
+/* =====================================================================
+   Bio subheading
+   ===================================================================== */
+
+.bio-subhead {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-top: 8px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+}
+@media (max-width: 520px) {
+  .bio-subhead {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+  }
+}
