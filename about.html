@@ -2,23 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="google-site-verification" content="J2MjWpshMWb_BfJvhMbxRysy1B_rmmm55DSOj57Hlis">
+  <meta name="msvalidate.01" content="548513EF12C6687B4259E20BBB79D6B8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Abdullah Al Mustafa · Singer, Writer, Composer</title>
-  <meta name="description" content="Abdullah Al Mustafa is a singer, writer, lyricist, and composer. This is the official artist profile — his work, languages, and journey.">
-  <meta name="keywords" content="Abdullah Al Mustafa, Abdullah Al Mustafa singer, Bangladeshi singer, Hindi Urdu singer, Abdullah Al Mustafa composer, writer">
+  <title>About Abdullah Al Mustafa — Singer, Lyricist & Composer</title>
+  <meta name="description" content="Abdullah Al Mustafa is a singer, lyricist, and composer from Chattogram, Bangladesh. His debut single Noor Tera Kaafi was released on YouTube in 2026.">
+  <meta name="keywords" content="Abdullah Al Mustafa, Bangladeshi singer, singer from Chattogram, Hindi Urdu singer, Noor Tera Kaafi, GulBahar, Sufi Qawwali, contemporary Pakistani pop, lyricist, composer">
   <meta name="author" content="Abdullah Al Mustafa">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0A0A0A">
 
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="About — Abdullah Al Mustafa">
-  <meta property="og:description" content="Singer, writer, lyricist, and composer. Official artist profile.">
+  <meta property="og:title" content="About Abdullah Al Mustafa — Singer, Lyricist & Composer">
+  <meta property="og:description" content="Abdullah Al Mustafa is a singer, lyricist, and composer from Chattogram, Bangladesh.">
   <meta property="og:url" content="https://abdullahalmustafa.onrender.com/about.html">
   <meta property="og:site_name" content="Abdullah Al Mustafa">
+  <meta property="og:image" content="https://i.ibb.co.com/5hmw3hTT/unnamed.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Abdullah Al Mustafa">
+  <meta name="twitter:description" content="Singer, lyricist, and composer from Chattogram, Bangladesh.">
+  <meta name="twitter:image" content="https://i.ibb.co.com/5hmw3hTT/unnamed.jpg">
 
   <link rel="canonical" href="https://abdullahalmustafa.onrender.com/about.html">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
@@ -37,10 +46,13 @@
         "@id": "https://abdullahalmustafa.onrender.com/#person",
         "name": "Abdullah Al Mustafa",
         "alternateName": ["Mustafa", "আব্দুল্লাহ আল মোস্তফা"],
-        "jobTitle": "Singer, Writer, Lyricist, Composer",
+        "jobTitle": ["Singer", "Lyricist", "Composer"],
+        "description": "Singer, lyricist, and composer from Chattogram, Bangladesh.",
         "url": "https://abdullahalmustafa.onrender.com/",
-        "image": "https://i.ibb.co.com/5hmw3hTT/unnamed.jpg",
-        "email": "abdullahalmustafa56@gmail.com",
+        "birthPlace": {
+          "@type": "Place",
+          "name": "Chattogram, Bangladesh"
+        },
         "nationality": {
           "@type": "Country",
           "name": "Bangladesh"
@@ -50,33 +62,42 @@
           { "@type": "Language", "name": "Urdu" },
           { "@type": "Language", "name": "Bengali" }
         ],
+        "genre": ["Contemporary Pakistani Pop", "Sufi", "Qawwali", "Devotional"],
+        "influencedBy": [
+          { "@type": "Person", "name": "Ali Zafar" },
+          { "@type": "Person", "name": "Atif Aslam" },
+          { "@type": "Person", "name": "Nusrat Fateh Ali Khan" },
+          { "@type": "MusicGroup", "name": "Sabri Brothers" }
+        ],
         "sameAs": [
           "https://youtube.com/@AbdullahAlMustafa_Official"
-        ]
+        ],
+        "email": "abdullahalmustafa56@gmail.com"
       },
       {
         "@type": "MusicGroup",
         "@id": "https://abdullahalmustafa.onrender.com/#musicgroup",
         "name": "Abdullah Al Mustafa",
         "member": { "@id": "https://abdullahalmustafa.onrender.com/#person" },
-        "genre": ["Hindi", "Urdu", "Devotional", "Hamd"],
+        "genre": ["Contemporary Pakistani Pop", "Sufi", "Qawwali", "Devotional"],
         "url": "https://abdullahalmustafa.onrender.com/",
         "sameAs": [
           "https://youtube.com/@AbdullahAlMustafa_Official"
         ]
       },
       {
-        "@type": "AboutPage",
-        "name": "About — Abdullah Al Mustafa",
-        "url": "https://abdullahalmustafa.onrender.com/about.html",
-        "about": { "@id": "https://abdullahalmustafa.onrender.com/#person" }
+        "@type": "MusicComposition",
+        "name": "Noor Tera Kaafi",
+        "composer": { "@id": "https://abdullahalmustafa.onrender.com/#person" },
+        "lyricist": { "@id": "https://abdullahalmustafa.onrender.com/#person" },
+        "datePublished": "2026-03-22",
+        "genre": "Hamd"
       },
       {
-        "@type": "WebSite",
-        "url": "https://abdullahalmustafa.onrender.com/",
-        "name": "Abdullah Al Mustafa — Official Website",
-        "inLanguage": "en",
-        "publisher": { "@id": "https://abdullahalmustafa.onrender.com/#person" }
+        "@type": "AboutPage",
+        "name": "About Abdullah Al Mustafa",
+        "url": "https://abdullahalmustafa.onrender.com/about.html",
+        "about": { "@id": "https://abdullahalmustafa.onrender.com/#person" }
       }
     ]
   }
@@ -89,22 +110,10 @@
       padding: 100px var(--pad) 60px;
     }
     .about-inner {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto;
     }
-    .about-page h1 {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(2.4rem, 10vw, 6rem);
-      line-height: 0.9;
-      letter-spacing: -0.045em;
-      text-transform: uppercase;
-      color: var(--black);
-      margin-bottom: 40px;
-      padding-bottom: 22px;
-      border-bottom: 1px solid var(--line-light);
-    }
-    .about-page .back-link {
+    .back-link {
       display: inline-block;
       font-family: var(--font-display);
       font-weight: 600;
@@ -115,59 +124,171 @@
       margin-bottom: 24px;
       transition: color 0.25s;
     }
-    .about-page .back-link:hover { color: var(--red); }
+    .back-link:hover { color: var(--red); }
 
+    .about-page h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.2rem, 8vw, 4.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 18px;
+    }
+    .about-subtitle {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(0.85rem, 1.6vw, 1rem);
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--grey);
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line-light);
+      margin-bottom: 44px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .about-subtitle::before {
+      content: "";
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+
+    /* Fact box */
+    .fact-box {
+      background: var(--surface);
+      border: 1px solid var(--line-light);
+      padding: 26px 24px;
+      margin-bottom: 44px;
+    }
+    .fact-box-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.66rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line-light);
+    }
+    .fact-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .fact-row:last-child { border-bottom: none; }
+    .fact-label {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--grey);
+      padding-top: 2px;
+    }
+    .fact-value {
+      color: var(--black);
+    }
+    .fact-value a {
+      color: var(--red);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 59, 31, 0.3);
+    }
+
+    /* Sections */
     .about-section {
       margin-bottom: 44px;
     }
     .about-section h2 {
       font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+      letter-spacing: -0.015em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line-light);
+    }
+    .about-section h3 {
+      font-family: var(--font-display);
       font-weight: 700;
-      font-size: 0.72rem;
-      letter-spacing: 0.32em;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--red);
-      margin-bottom: 16px;
+      margin-top: 24px;
+      margin-bottom: 10px;
     }
     .about-section p {
       font-size: 1.02rem;
-      line-height: 1.75;
+      line-height: 1.78;
       color: var(--grey-dark);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
     .about-section p.lead {
       font-family: var(--font-display);
       font-weight: 500;
       font-size: clamp(1.15rem, 2.2vw, 1.4rem);
-      line-height: 1.42;
-      letter-spacing: -0.01em;
+      line-height: 1.45;
+      letter-spacing: -0.008em;
       color: var(--black);
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
-    .about-section ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .about-section ul li {
-      font-size: 1rem;
-      line-height: 1.75;
-      color: var(--grey-dark);
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    }
-    .about-section ul li:last-child { border-bottom: none; }
-    .about-section ul li strong {
+    .about-section em {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 500;
       color: var(--black);
-      font-weight: 600;
     }
     .about-section a {
       color: var(--red);
-      border-bottom: 1px solid rgba(255, 59, 31, 0.35);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 59, 31, 0.3);
       transition: border-color 0.25s;
     }
     .about-section a:hover {
       border-bottom-color: var(--red);
+    }
+    .about-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px 0;
+    }
+    .about-section ul li {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--grey-dark);
+      padding: 9px 0 9px 22px;
+      position: relative;
+    }
+    .about-section ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 10px;
+      height: 1px;
+      background: var(--red);
+    }
+
+    @media (max-width: 520px) {
+      .about-page { padding-top: 80px; }
+      .fact-row { grid-template-columns: 1fr; gap: 4px; }
+      .fact-label { padding-top: 0; }
+      .about-section p { font-size: 0.96rem; }
+      .about-section ul li { font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -184,52 +305,152 @@
   </nav>
 
   <main class="about-page">
-    <div class="about-inner">
+    <article class="about-inner">
 
       <a href="/" class="back-link">← Back to Home</a>
-      <h1>About</h1>
+
+      <h1>Abdullah Al Mustafa</h1>
+      <p class="about-subtitle">Singer · Lyricist · Composer</p>
+
+      <div class="fact-box">
+        <p class="fact-box-title">Quick Facts</p>
+        <div class="fact-row">
+          <span class="fact-label">Born</span>
+          <span class="fact-value">Chattogram, Bangladesh</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Also known as</span>
+          <span class="fact-value">Mustafa</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Occupations</span>
+          <span class="fact-value">Singer · Lyricist · Composer · Student</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Languages</span>
+          <span class="fact-value">Hindi · Urdu · Bengali</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Genres</span>
+          <span class="fact-value">Contemporary Pakistani Pop · Sufi · Qawwali · Devotional</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Years active</span>
+          <span class="fact-value">2026 – present</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Debut single</span>
+          <span class="fact-value"><em>Noor Tera Kaafi</em> (2026)</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Influences</span>
+          <span class="fact-value">Ali Zafar · Atif Aslam · Nusrat Fateh Ali Khan · Sabri Brothers</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Channel</span>
+          <span class="fact-value">
+            <a href="https://youtube.com/@AbdullahAlMustafa_Official" target="_blank" rel="noopener">YouTube</a>
+          </span>
+        </div>
+      </div>
 
       <section class="about-section">
-        <h2>Who</h2>
+        <h2>Introduction</h2>
         <p class="lead">
-          Abdullah Al Mustafa is a singer, writer, lyricist, and composer.
+          Abdullah Al Mustafa is a singer, lyricist, and composer from Chattogram.
         </p>
         <p>
-          He is a self-taught musician, inspired by Ali Zafar, and he deeply respects
-          the Sabri Brothers, Nusrat Fateh Ali Khan, and Atif Aslam.
-        </p>
-      </section>
-
-      <section class="about-section">
-        <h2>Work</h2>
-        <ul>
-          <li><strong>Roles</strong> — Singer, Writer, Lyricist, Composer</li>
-          <li><strong>Languages</strong> — Hindi, Urdu</li>
-          <li><strong>Genres</strong> — Devotional (Hamd), Contemporary</li>
-          <li><strong>Debut Single</strong> — <em>Noor Tera Kaafi</em> (a Hamd), released on YouTube, March 22, 2026</li>
-          <li><strong>Current</strong> — Working on multiple new songs</li>
-          <li><strong>Also known as</strong> — Mustafa</li>
-        </ul>
-      </section>
-
-      <section class="about-section">
-        <h2>Journey</h2>
-        <p>
-          At sixteen, he dreamed of becoming a musician. At seventeen, he began working for it.
-        </p>
-        <p>
-          His debut single, <em>Noor Tera Kaafi</em> — a Hamd — was written, composed,
-          and sung by him. It was produced by Hasib Raihan, with mixing and mastering by
-          Mustafa. Due to an unforeseen incident, the song was later removed from YouTube.
-          He is now re-creating it to give his best.
+          His musical interests encompass contemporary Pakistani pop, Sufi music, Qawwali,
+          and devotional music. He began writing songs at the age of sixteen and subsequently
+          developed an interest in composition and independent music production.
         </p>
       </section>
 
       <section class="about-section">
-        <h2>Writings</h2>
+        <h2>Early Life &amp; Musical Beginnings</h2>
         <p>
-          Beyond music, Abdullah writes — lyrics, poetic lines, and reflections.
-          Every song begins as words on a page.
+          Abdullah Al Mustafa's interest in music developed during his early years.
+          At sixteen, he began writing original songs, laying the foundation for his
+          development as a lyricist and aspiring musician. At seventeen, he began
+          composing music for his earlier work, further expanding his involvement in
+          the creative process.
+        </p>
+        <p>
+          His early songwriting included <em>GulBahar</em>, a song he wrote at sixteen
+          and composed music for at seventeen. Although it was never professionally
+          recorded or officially released, the piece represents an early milestone in
+          his development as a songwriter and composer.
+        </p>
+        <p>
+          Alongside music, Abdullah has pursued his education in the Science stream.
+          As of 2026, he is a ninth-grade student who continues to develop his musical
+          skills through independent learning, experimentation, and practical experience.
+        </p>
+      </section>
+
+      <section class="about-section">
+        <h2>Musical Career</h2>
+
+        <h3>Debut Release</h3>
+        <p>
+          Abdullah made his debut with <em>Noor Tera Kaafi</em>, a Hamd released on
+          YouTube on 22 March 2026. He wrote, composed, and performed the piece, while
+          Hasib Raihan served as its producer. Abdullah also undertook the mixing and
+          mastering, contributing to several stages of the production process.
+        </p>
+        <p>
+          Following an unforeseen incident, the track was removed from YouTube. Abdullah
+          subsequently decided to recreate the song, with the intention of producing a
+          more refined version that better reflected his artistic vision.
+        </p>
+
+        <h3>Songwriting &amp; Poetry</h3>
+        <p>
+          Songwriting and poetry form important parts of Abdullah's creative practice.
+          In addition to his early work, <em>GulBahar</em>, he has written numerous songs,
+          several of which remain unreleased.
+        </p>
+        <p>
+          His written poetry includes <em>Tumara Nam</em>, <em>Kuch Hua Tha</em>, and
+          <em>Tum Jaisa Khoob</em>. Through songwriting and poetry, he explores emotions,
+          personal experiences, and ideas that inform his approach to musical expression.
+        </p>
+        <p>
+          Abdullah continues to work on original compositions and songs as he develops
+          his artistic identity and prepares material for future releases.
+        </p>
+      </section>
+
+      <section class="about-section">
+        <h2>Musical Style &amp; Influences</h2>
+        <p>
+          Abdullah's musical interests span contemporary Pakistani pop and traditional
+          Sufi and Qawwali music. Among the artists who have influenced him are
+          Ali Zafar, Atif Aslam, Nusrat Fateh Ali Khan, and the Sabri Brothers.
+        </p>
+        <p>
+          His favourite songs include <em>Afreen Afreen</em>, performed by Nusrat Fateh
+          Ali Khan and Rahat Fateh Ali Khan; <em>Aadat</em>, associated with Atif Aslam;
+          and <em>Rockstar</em>, by Ali Zafar.
+        </p>
+        <p>
+          Atif Aslam has played a particularly significant role in Abdullah's musical
+          interests. The first Pakistani song he heard was by Atif Aslam — an experience
+          that helped spark his lasting interest in Pakistani music.
+        </p>
+        <p>
+          He also draws inspiration from the vocal traditions and devotional expression
+          associated with Sufi and Qawwali music, reflecting a range of influences in
+          his musical interests.
+        </p>
+      </section>
+
+      <section class="about-section">
+        <h2>Artistic Aspirations</h2>
+        <p>
+          One of Abdullah's long-term ambitions is to collaborate with Atif Aslam and
+          Ali Zafar. His admiration for both artists dates back to childhood, when he
+          watched them perform <em>Yaar Yaar</em>.
         </p>
       </section>
 
@@ -252,18 +473,18 @@
       <section class="about-section">
         <h2>About This Website</h2>
         <p>
-          This is the official website of Abdullah Al Mustafa — a Bangladeshi singer,
-          writer, lyricist, and composer working in Hindi and Urdu. The site features
-          his music, writings, and contact information.
+          This is the official website of Abdullah Al Mustafa — a singer, lyricist, and
+          composer from Chattogram, Bangladesh. The site features his music, writings,
+          and contact information.
         </p>
         <p>
-          All content, music, lyrics, and artwork on this site are the work of
-          Abdullah Al Mustafa. Website designed and developed by
+          All content, music, lyrics, and artwork are the work of Abdullah Al Mustafa.
+          Website designed and developed by
           <a href="https://ocidecoders.onrender.com/" target="_blank" rel="noopener">Ocide Coders</a>.
         </p>
       </section>
 
-    </div>
+    </article>
   </main>
 
   <footer class="footer">
