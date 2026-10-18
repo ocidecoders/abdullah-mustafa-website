@@ -68,7 +68,6 @@
           '<div class="song-thumb">' + thumbHtml + playHtml + '</div>' +
           '<div class="song-info">' +
             '<h3 class="song-title">' + song.title + '</h3>' +
-            (song.subtitle ? '<span class="song-subtitle">' + song.subtitle + '</span>' : '') +
           '</div>';
 
         if (hasYt) {
@@ -88,16 +87,16 @@
   }
 
   // ============================================================
-  // WRITINGS
+  // DIARY (Stories written by Abdullah)
   // ============================================================
-  function renderWritings() {
-    var data = window.WRITINGS_DATA;
-    var section = document.getElementById('writings');
-    var feed = document.getElementById('writings-feed');
+  function renderDiary() {
+    var data = window.DIARY_DATA;
+    var section = document.getElementById('diary');
+    var feed = document.getElementById('diary-feed');
     if (!section || !feed) return;
 
-    var items = (data || []).filter(function (w) {
-      return w && w.image && w.image.trim();
+    var items = (data || []).filter(function (d) {
+      return d && d.title && d.title.trim();
     });
 
     if (items.length === 0) {
@@ -108,24 +107,25 @@
     section.style.display = '';
     feed.innerHTML = '';
 
-    var shown = items.slice(0, 1);
+    // Show max 2 items on homepage
+    var shown = items.slice(0, 2);
 
-    shown.forEach(function (w) {
+    shown.forEach(function (entry) {
       var card = document.createElement('article');
       card.className = 'writing-card';
 
-      var link = (w.link && w.link.trim()) ? w.link : 'writings.html';
-      var titleHtml = w.title ? '<h3 class="writing-title">' + w.title + '</h3>' : '';
-      var dateHtml = w.date ? '<span class="writing-date">' + w.date + '</span>' : '';
+      var link = entry.link || '#';
+      var titleHtml = '<h3 class="writing-title">' + entry.title + '</h3>';
+      var dateHtml = entry.date ? '<span class="writing-date">' + entry.date + '</span>' : '';
+      var imgHtml = entry.image ? '<div class="writing-image"><img src="' + entry.image + '" alt="' + entry.title + '" loading="lazy"></div>' : '';
 
       card.innerHTML =
         '<a href="' + link + '" class="writing-link">' +
-          '<div class="writing-image">' +
-            '<img src="' + w.image + '" alt="' + (w.title || 'Writing') + '" loading="lazy">' +
-          '</div>' +
+          imgHtml +
           '<div class="writing-info">' +
             titleHtml +
             dateHtml +
+            '<span class="writing-read">Read Story →</span>' +
           '</div>' +
         '</a>';
 
@@ -186,7 +186,7 @@
   // ---------- Boot ----------
   function boot() {
     renderMusic();
-    renderWritings();
+    renderDiary();
     initForm();
   }
 
